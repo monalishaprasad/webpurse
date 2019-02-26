@@ -1,0 +1,17 @@
+vikah pusrse
+--> NOtes
+--> cards 
+--> slips
+--> coins
+
+when i want to see the total no of amount in vikash purse i can see.
+when i want to see how many cards are there in purse i can see.
+when i want to see what are different cards are there i can see
+when i want to see how many coins and total amount are there i can calculate
+
+List<Card> cards = new ArrayList<>();
+cards.add{new DebitCard());
+cards.add{new CreditCard());
+cards.add{new BusinessCard());
+cards.add{new DebitCard());
+
