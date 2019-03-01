@@ -1,11 +1,7 @@
-package com.purse;
+package com.purseWeb.viksuuPurse.model;
 
 import java.util.List;
 
-import com.cards.Card;
-import com.currency.Coins;
-import com.currency.Notes;
-import com.slips.Slip;
 
 // comment added
 public class Purse {

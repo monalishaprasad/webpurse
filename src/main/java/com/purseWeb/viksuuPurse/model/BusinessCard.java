@@ -1,4 +1,4 @@
-package com.cards;
+package com.purseWeb.viksuuPurse.model;
 
 public class BusinessCard extends Card {
 	private String Name;

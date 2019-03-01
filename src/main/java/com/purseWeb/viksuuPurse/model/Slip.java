@@ -1,9 +1,28 @@
-package com.slips;
+package com.purseWeb.viksuuPurse.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Slip")
 public class Slip {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 	private int billAmount;
 	private String slipType;
 	private String description;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 	public int getBillAmount() {
 		return billAmount;

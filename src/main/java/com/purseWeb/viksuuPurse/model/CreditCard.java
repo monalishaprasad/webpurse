@@ -1,4 +1,4 @@
-package com.cards;
+package com.purseWeb.viksuuPurse.model;
 
 public class CreditCard extends Card {
 

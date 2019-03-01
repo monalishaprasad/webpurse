@@ -1,10 +1,10 @@
-package com.service;
+package com.purseWeb.viksuuPurse.service;
 
-import com.cards.BusinessCard;
-import com.cards.Card;
-import com.cards.CreditCard;
-import com.cards.DebitCard;
-import com.purse.Purse;
+import com.purseWeb.viksuuPurse.model.BusinessCard;
+import com.purseWeb.viksuuPurse.model.Card;
+import com.purseWeb.viksuuPurse.model.CreditCard;
+import com.purseWeb.viksuuPurse.model.DebitCard;
+import com.purseWeb.viksuuPurse.model.Purse;
 
 public class Calculator {
 
