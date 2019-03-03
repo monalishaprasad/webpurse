@@ -14,8 +14,8 @@ public class SlipController {
 	@Autowired
 	private SlipBusinessService service;
 	
-	@PostMapping
-	public Slip getTheSlip(@RequestBody Slip addSlips){
+	@PostMapping("/addSlip")
+	public Slip createSlip(@RequestBody Slip addSlips){
 		
 		Slip slip = service.addSlip(addSlips);
 		return slip;

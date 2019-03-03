@@ -20,7 +20,6 @@ public class Coins {
 	private int radius;
 	
 	
-	
 	public Integer getId() {
 		return id;
 	}

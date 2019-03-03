@@ -14,7 +14,7 @@ public class CoinController {
 	@Autowired
 	private CoinBusinessService service;
 	
-	@PostMapping
+	@PostMapping("/addCoin")
 	public Coins getTheCoin(@RequestBody Coins addCoins){
 		
 		Coins coin = service.addCoin(addCoins);
