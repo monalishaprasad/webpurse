@@ -1,5 +1,6 @@
 package com.purseWeb.viksuuPurse.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,10 +8,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Slip")
+@Table(name = "SLIP")
 public class Slip {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", unique = true, nullable = false)
 	private Integer id;
 	private int billAmount;
 	private String slipType;
@@ -50,7 +52,7 @@ public class Slip {
 
 	@Override
 	public String toString() {
-		return String.format("Slip [billAmount=%s, slipType=%s, desccription=%s]", billAmount, slipType, description);
+		return "Slip [id=" + id + ", billAmount=" + billAmount + ", slipType=" + slipType + ", description="
+				+ description + "]";
 	}
-
 }

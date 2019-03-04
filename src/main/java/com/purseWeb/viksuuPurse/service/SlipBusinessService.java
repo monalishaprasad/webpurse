@@ -1,5 +1,7 @@
 package com.purseWeb.viksuuPurse.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +22,12 @@ public class SlipBusinessService {
 		
 	}
 	
+	public List<Slip> getSlip(){
+		
+		List<Slip> newSlip = repo.findAll();
+		
+		return newSlip;	
+	}
 	
 	
 

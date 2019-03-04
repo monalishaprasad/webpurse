@@ -21,14 +21,14 @@ public class NoteController {
 
 
 	@PostMapping("/insertNote")
-	public Notes getTheNotes(@RequestBody Notes addNotes) {
+	public Notes addTheNotes(@RequestBody Notes addNotes) {
 		Notes notes = service.addNotes(addNotes);
 		return notes;
 
 	}
 
 	@GetMapping("/getNote")
-	List<Notes> allNotes() {
+	public List<Notes> allNotes() {
 		
 		List<Notes> notes = service.getNotes();
 		return notes;

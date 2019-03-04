@@ -1,5 +1,7 @@
 package com.purseWeb.viksuuPurse.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,4 +20,10 @@ public class CoinBusinessService {
 	}
 	
 
+	public List<Coins> getCoin(){
+		
+		List<Coins> allCoin = rep.findAll();
+		
+		return allCoin;
+	}
 }

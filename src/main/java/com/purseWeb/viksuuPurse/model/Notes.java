@@ -15,7 +15,6 @@ public class Notes {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", unique = true, nullable = false)
 	private Integer id;
-
 	private String color;
 	private int num;
 	private String image;

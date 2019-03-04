@@ -13,15 +13,15 @@ public class NoteBusinessService {
 
 	@Autowired
 	private NoteRepository repo;
-	public Notes addNotes(Notes note){
-		
+
+	public Notes addNotes(Notes note) {
+
 		Notes newNote = repo.save(note);
 		return newNote;
 	}
-	
-	
-public List<Notes> getNotes(){
-		
+
+	public List<Notes> getNotes() {
+
 		List<Notes> newNote = repo.findAll();
 		return newNote;
 	}

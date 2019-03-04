@@ -1,5 +1,6 @@
 package com.purseWeb.viksuuPurse.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,6 +13,7 @@ public class DebitCard extends Card {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", unique = true, nullable = false)
 	private Integer id;
 	private String nameOnCard;
 	private String debitCardType;
@@ -87,9 +89,9 @@ public class DebitCard extends Card {
 
 	@Override
 	public String toString() {
-		return String.format(
-				"DebitCard [nameOnCard=%s, debitCardType=%s, bankName=%s, cardNo=%s, cvv=%s, expirayDate=%s, balance=%s]",
-				nameOnCard, debitCardType, bankName, cardNo, cvv, expirayDate, balance);
+		return "DebitCard [id=" + id + ", nameOnCard=" + nameOnCard + ", debitCardType=" + debitCardType + ", bankName="
+				+ bankName + ", cardNo=" + cardNo + ", cvv=" + cvv + ", expirayDate=" + expirayDate + ", balance="
+				+ balance + "]";
 	}
 
 }

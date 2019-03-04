@@ -1,6 +1,9 @@
 package com.purseWeb.viksuuPurse.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,5 +23,12 @@ public class DebitCardController {
 		DebitCard debitCards = service.addDebitCard(addDebitCards);
 
 		return debitCards;
+	}
+
+	@GetMapping("/getDebitCard")
+	public List<DebitCard> getAllDebitCard() {
+		List<DebitCard> debitcard = service.getDebitCard();
+		return debitcard;
+
 	}
 }
