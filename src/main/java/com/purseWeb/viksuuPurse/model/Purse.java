@@ -2,15 +2,49 @@ package com.purseWeb.viksuuPurse.model;
 
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-// comment added
 public class Purse {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", unique = true, nullable = false)
+	private Integer id;
+	private double cash;
+	private double totalBalance;
 	private String colour;
 	private String pursetype;
-	private List<Notes> notes;
+	public List<Notes> notes;
 	private List<Coins> coins;
 	private List<Slip> slips;
 	private List<Card> card;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public double getCash() {
+		return cash;
+	}
+
+	public void setCash(double cash) {
+		this.cash = cash;
+	}
+
+	public double getTotalBalance() {
+		return totalBalance;
+	}
+
+	public void setTotalBalance(double totalBalance) {
+		this.totalBalance = totalBalance;
+	}
 
 	public String getColour() {
 		return colour;
@@ -33,6 +67,7 @@ public class Purse {
 	}
 
 	public void setNotes(List<Notes> notes) {
+		
 		this.notes = notes;
 	}
 
@@ -62,8 +97,9 @@ public class Purse {
 
 	@Override
 	public String toString() {
-		return String.format("Purse [colour=%s, pursetype=%s, notes=%s, coins=%s, slips=%s, card=%s]", colour,
-				pursetype, notes, coins, slips, card);
+		return "Purse [id=" + id + ", cash=" + cash + ", totalBalance=" + totalBalance + ", colour=" + colour
+				+ ", pursetype=" + pursetype + ", notes=" + notes + ", coins=" + coins + ", slips=" + slips + ", card="
+				+ card + "]";
 	}
 
 }

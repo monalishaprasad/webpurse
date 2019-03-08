@@ -1,6 +1,5 @@
 package com.purseWeb.viksuuPurse.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,19 +7,17 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "DebitCards")
-public class DebitCard extends Card {
-
+@Table(name = "DEBIT_CARD")
+public class DebitCard extends Card {     
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id", unique = true, nullable = false)
 	private Integer id;
 	private String nameOnCard;
 	private String debitCardType;
 	private String bankName;
 	private int cardNo;
 	private int cvv;
-	private String expirayDate;
+	private String expiryDate;
 	private long balance;
 
 	public Integer getId() {
@@ -80,17 +77,17 @@ public class DebitCard extends Card {
 	}
 
 	public String getExpirayDate() {
-		return expirayDate;
+		return expiryDate;
 	}
 
 	public void setExpirayDate(String expirayDate) {
-		this.expirayDate = expirayDate;
+		this.expiryDate = expirayDate;
 	}
 
 	@Override
 	public String toString() {
 		return "DebitCard [id=" + id + ", nameOnCard=" + nameOnCard + ", debitCardType=" + debitCardType + ", bankName="
-				+ bankName + ", cardNo=" + cardNo + ", cvv=" + cvv + ", expirayDate=" + expirayDate + ", balance="
+				+ bankName + ", cardNo=" + cardNo + ", cvv=" + cvv + ", expirayDate=" + expiryDate + ", balance="
 				+ balance + "]";
 	}
 

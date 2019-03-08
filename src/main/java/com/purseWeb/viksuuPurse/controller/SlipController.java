@@ -13,23 +13,23 @@ import com.purseWeb.viksuuPurse.service.SlipBusinessService;
 
 @RestController
 public class SlipController {
-	
+
 	@Autowired
 	private SlipBusinessService service;
-	
-	@PostMapping("/addSlip")
-	public Slip createSlip(@RequestBody Slip addSlips){
-		
+
+	@PostMapping("/insertSlip")
+	public Slip createSlip(@RequestBody Slip addSlips) {
+
 		Slip slip = service.addSlip(addSlips);
 		return slip;
-		
+
 	}
-	
+
 	@GetMapping("/getSlips")
-	public List<Slip> allSlip(){
+	public List<Slip> allSlip() {
 		List<Slip> slips = service.getSlip();
-		
+
 		return slips;
 	}
-	
+
 }

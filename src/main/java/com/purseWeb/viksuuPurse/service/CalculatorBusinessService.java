@@ -1,18 +1,99 @@
 package com.purseWeb.viksuuPurse.service;
 
-import com.purseWeb.viksuuPurse.model.BusinessCard;
-import com.purseWeb.viksuuPurse.model.Card;
-import com.purseWeb.viksuuPurse.model.CreditCard;
-import com.purseWeb.viksuuPurse.model.DebitCard;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.purseWeb.viksuuPurse.model.Notes;
 import com.purseWeb.viksuuPurse.model.Purse;
+import com.purseWeb.viksuuPurse.repository.NoteRepository;
+import com.purseWeb.viksuuPurse.repository.PurseRepository;
+import com.purseWeb.viksuuPurse.utility.UserPurse;
 
-public class Calculator {
+@Service
+public class CalculatorBusinessService {
 
+	@Autowired
+	private PurseRepository repo;
 	private static long amount = 0;
 
-	public long calculateCash(Purse purse) {
+	@Autowired
+	public NoteRepository reps;
+	
+	public Purse purseOperation(UserPurse userPurse){
+		
+		
+		Purse purse = userSpecificToApplicationSpecific(userPurse);
+		long totalBal = calculateCash(purse);
+		purse.setTotalBalance(totalBal);
+		
+		
+		//total bankbalance
+		
+		
+		
+		
+		return purse;
+		
+	}
+	
+	private long calculateCash(Purse purse){
+		
+		purse.getNotes().forEach(e-> {
+			
+		}	
+				);
+		
+		return 0;
+		
+ 	}
+   private Purse  userSpecificToApplicationSpecific(UserPurse userPurse) {
+	
+	Purse purse = new Purse();
+	
+	List<Notes> addingList = new ArrayList<>();
+//	Get all types of note -> 
+	 
+	
+	
+	List<Notes> allNotes = reps.findAll();
+	
+	
+	allNotes.forEach(realNote-> {
+		userPurse.getNotes().forEach(userType->{
+			if(realNote.getNum()==(Integer)userType){
+				addingList.add(realNote); //purse me add
+				
+				
+			}
+		});
+	});
+	
+	purse.setNotes(addingList);
+	
+
+	
+	
+			
+	//match the amount of userPurse with List of note purse
+	 // if match >> add that object into purse note list
+	
+	//match the amount of usercoins with the list of Coin purse
+	  // if match >> add to coin object into purse coin list
+	
+	
+	
+	// after adding all note and purse return it to purse 
+	
+	return purse;
+}// end
+	
+	/*public long calculateCash(Purse purse) {
 
 		System.out.println("doing");
+		
 		purse.getNotes().forEach(e -> {
 			amount = amount + e.getNum();
 		});
@@ -86,7 +167,7 @@ public class Calculator {
 		tCard=purse.getCard().size();
 		
 		System.out.println("Total number of cards in vikash's purse "+tCard);
-		return 0;
+		return tCard;
 		
 	}
 
@@ -97,6 +178,6 @@ public class Calculator {
 		System.out.println("Total number of Slips in vikash's purse " + nOS);
 
 		return purse.getSlips().size();
-	}
+	}*/
 
 }

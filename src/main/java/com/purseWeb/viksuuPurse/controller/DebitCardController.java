@@ -17,7 +17,7 @@ public class DebitCardController {
 	@Autowired
 	private DebitCardBusinessService service;
 
-	@PostMapping("/addDebitcard")
+	@PostMapping("/insertDebitCard")
 	public DebitCard getDebitCard(@RequestBody DebitCard addDebitCards) {
 
 		DebitCard debitCards = service.addDebitCard(addDebitCards);

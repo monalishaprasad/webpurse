@@ -15,7 +15,7 @@ public class BusinessCard extends Card {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", unique = true, nullable = false)
 	private Integer id;
-	private String Name;
+	private String name;
 	private String address;
 	private String companyName;
 	private int mobileNumber;
@@ -29,11 +29,11 @@ public class BusinessCard extends Card {
 	}
 
 	public String getName() {
-		return Name;
+		return name;
 	}
 
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 
 	public String getAddress() {
@@ -62,7 +62,7 @@ public class BusinessCard extends Card {
 
 	@Override
 	public String toString() {
-		return "BusinessCard [id=" + id + ", Name=" + Name + ", address=" + address + ", companyName=" + companyName
+		return "BusinessCard [id=" + id + ", Name=" + name + ", address=" + address + ", companyName=" + companyName
 				+ ", mobileNumber=" + mobileNumber + "]";
 	}
 
