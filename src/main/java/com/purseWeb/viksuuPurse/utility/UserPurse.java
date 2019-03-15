@@ -1,48 +1,64 @@
 package com.purseWeb.viksuuPurse.utility;
 
-import java.util.List;
-
-/**
- * @author mprasad
- *
- */
+/*@Entity
+@Table(name = "USERUTILITY")*/
 public class UserPurse {
 
-	private List<Number> notes;
-	private List<Number> coins;
+	/*@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", unique = true, nullable = false)
+	private int id;*/
+	private String notes;
+	private String coins;
+	private String debitCard;
 	
+	public void setDebitCard(String debitCard) {
+		this.debitCard = debitCard;
+	}
+	public String getDebitCard() {
+		return debitCard;
+	}
+	private String purseHolderName;
+	//private String CardBal;
 	
-	/**
-	 * @return
-	 */
-	public List<Number> getNotes() {
+	public String getPurseHolderName() {
+		return purseHolderName;
+	}
+	public void setPurseHolderName(String purseHolderName) {
+		this.purseHolderName = purseHolderName;
+	}
+	/*public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}*/
+	public String getNotes() {
 		return notes;
 	}
-	public void setNotes(List<Number> notes) {
+	public void setNotes(String notes) {
 		this.notes = notes;
 	}
-	
-	
-	/**
-	 * @return  List
-	 */
-	public List<Number> getCoins() {
+	public String getCoins() {
 		return coins;
 	}
-	
-	
-	/**
-	 * @param coins
-	 */
-	public void setCoins(List<Number> coins) {
+	public void setCoins(String coins) {
 		this.coins = coins;
 	}
-
-
+	/*public String getCardBal() {
+		return CardBal;
+	}
+	public void setCardBal(String cardBal) {
+		CardBal = cardBal;
+	}*/
 	@Override
 	public String toString() {
-		return "UserPurse [notes=" + notes + ", coins=" + coins + "]";
+		return "UserPurse [notes=" + notes + ", coins=" + coins + ", debitCard=" + debitCard + ", purseHolderName="
+				+ purseHolderName + "]";
 	}
-
+	
+	
 	
 }
+
+	

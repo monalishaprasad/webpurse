@@ -1,105 +1,83 @@
 package com.purseWeb.viksuuPurse.model;
 
-import java.util.List;
-
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "PURSE")
 public class Purse {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", unique = true, nullable = false)
-	private Integer id;
+	private int id;
 	private double cash;
+	private String purseHolderName;
 	private double totalBalance;
-	private String colour;
-	private String pursetype;
-	public List<Notes> notes;
-	private List<Coins> coins;
-	private List<Slip> slips;
-	private List<Card> card;
-
-	public Integer getId() {
+	private String notes;
+	private String coins;
+	private String slips;
+	private String cards;
+	public int getId() {
 		return id;
 	}
-
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
 	}
-
 	public double getCash() {
 		return cash;
 	}
-
+	public String getPurseHolderName() {
+		return purseHolderName;
+	}
+	public void setPurseHolderName(String purseHolderName) {
+		this.purseHolderName = purseHolderName;
+	}
 	public void setCash(double cash) {
 		this.cash = cash;
 	}
-
 	public double getTotalBalance() {
 		return totalBalance;
 	}
-
 	public void setTotalBalance(double totalBalance) {
 		this.totalBalance = totalBalance;
 	}
-
-	public String getColour() {
-		return colour;
-	}
-
-	public void setColour(String colour) {
-		this.colour = colour;
-	}
-
-	public String getPursetype() {
-		return pursetype;
-	}
-
-	public void setPursetype(String pursetype) {
-		this.pursetype = pursetype;
-	}
-
-	public List<Notes> getNotes() {
+	public String getNotes() {
 		return notes;
 	}
-
-	public void setNotes(List<Notes> notes) {
-		
+	public void setNotes(String notes) {
 		this.notes = notes;
 	}
-
-	public List<Coins> getCoins() {
+	public String getCoins() {
 		return coins;
 	}
-
-	public void setCoins(List<Coins> coins) {
+	public void setCoins(String coins) {
 		this.coins = coins;
 	}
-
-	public List<Slip> getSlips() {
+	public String getSlips() {
 		return slips;
 	}
-
-	public void setSlips(List<Slip> slips) {
+	public void setSlips(String slips) {
 		this.slips = slips;
 	}
-
-	public List<Card> getCard() {
-		return card;
+	public String getCards() {
+		return cards;
 	}
-
-	public void setCard(List<Card> card) {
-		this.card = card;
+	public void setCards(String cards) {
+		this.cards = cards;
 	}
-
 	@Override
 	public String toString() {
-		return "Purse [id=" + id + ", cash=" + cash + ", totalBalance=" + totalBalance + ", colour=" + colour
-				+ ", pursetype=" + pursetype + ", notes=" + notes + ", coins=" + coins + ", slips=" + slips + ", card="
-				+ card + "]";
+		return "Purse [id=" + id + ", cash=" + cash + ", purseHolderName=" + purseHolderName + ", totalBalance="
+				+ totalBalance + ", notes=" + notes + ", coins=" + coins + ", slips=" + slips + ", cards=" + cards
+				+ "]";
 	}
 
+	
 }
+
+	

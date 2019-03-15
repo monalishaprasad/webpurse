@@ -1,5 +1,6 @@
 package com.purseWeb.viksuuPurse.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,17 +10,19 @@ import com.purseWeb.viksuuPurse.service.CalculatorBusinessService;
 import com.purseWeb.viksuuPurse.utility.UserPurse;
 
 @RestController
-public class PurseController {
-	 
+public class UserPurseController {
+
+	@Autowired
 	private CalculatorBusinessService service;
 	
-	@PostMapping("/addIntoPurse")
-	 public Purse insertIntoPurse(@RequestBody UserPurse userPurse){
+	@PostMapping("/postUserPurse")
+	public Purse userPurse(@RequestBody UserPurse addPurse){	
 		
-		Purse insidePurse = service.purseOperation(userPurse);
+		Purse intoPurse = service.calculatePurse(addPurse);
+	
+
 		
-		return insidePurse;
+		return intoPurse;
 		
 	}
-
 }

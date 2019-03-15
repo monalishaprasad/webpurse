@@ -60,4 +60,11 @@ public class Notes {
 		this.id = id;
 	}
 
+	@Override
+	public String toString() {
+		return "Notes [id=" + id + ", color=" + color + ", num=" + num + ", image=" + image + ", paper=" + paper + "]";
+	}
+	
+	
+
 }
